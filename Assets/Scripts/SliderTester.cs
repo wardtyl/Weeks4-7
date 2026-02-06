@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Missleonmouseclick : MonoBehaviour
+public class SliderTester : MonoBehaviour
 {
+    public float currentSliderValue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +12,11 @@ public class Missleonmouseclick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool Ke
+        
+    }
+
+    public void ValueChanged(float value)
+    {
+        currentSliderValue = value;
     }
 }
