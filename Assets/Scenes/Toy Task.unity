@@ -1471,6 +1471,7 @@ GameObject:
   - component: {fileID: 756439517}
   - component: {fileID: 756439516}
   - component: {fileID: 756439515}
+  - component: {fileID: 756439518}
   m_Layer: 5
   m_Name: Plate Button
   m_TagString: Untagged
@@ -1580,6 +1581,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756439513}
   m_CullTransparentMesh: 1
+--- !u!114 &756439518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756439513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f35b805dc6a7ce46a695528265350d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0
+  clockDuration: 5
 --- !u!1 &815157789
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,17 +3397,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5806507785465869280, guid: 2d329fcddec4558419ff70b99bc7421b, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1968716776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3443,6 +3458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd484ba0e74065c4587161855657370d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningPrefab: {fileID: 5806507785465869280, guid: 2d329fcddec4558419ff70b99bc7421b, type: 3}
+  waitDuration: 3
 --- !u!1 &2057704376
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,7 +3926,7 @@ SceneRoots:
   - {fileID: 432100114}
   - {fileID: 246733968}
   - {fileID: 1146045047}
-  - {fileID: 7248541765695555614}
   - {fileID: 154589255}
+  - {fileID: 7248541765695555614}
   - {fileID: 640901531}
   - {fileID: 1501239036}
