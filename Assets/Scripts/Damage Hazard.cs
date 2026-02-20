@@ -2,37 +2,40 @@ using UnityEngine;
 
 public class DamageHazard : MonoBehaviour
 {
+    public Color damageColour;
+    private Color playerColour;
+
     public int damage;
     public Player player;
-
-    private SpriteRenderer hazardRenderer;
-    private bool wasInTheHazard = false;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        hazardRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool isInTheHazard = hazardRenderer.bounds.Contains(player.transform.position);
-        if (isInTheHazard
-            && wasInTheHazard == false)
-        {
-            wasInTheHazard = true;
-            player.TakeDamage(damage);
-        }
-        //IF WE HAVE EXITED OUT OF THE HAZARD AND WE WERE PREVIOUSLY IN THE HAZARD
-        //THEN WE RESET
-        else if (!isInTheHazard && wasInTheHazard)
-        {
-            wasInTheHazard = false;
-        }
 
+    }
 
+    public void ApplyDamage()
+    {
+        player.TakeDamage(damage);
+    }
+
+    public void ChangePlayerColour()
+    {
+        SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
+        playerColour = playerRenderer.color;
+        playerRenderer.color = damageColour;
+    }
+
+    public void ResetPlayerColour()
+    {
+        SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
+        playerRenderer.color = playerColour;
     }
 }
 
