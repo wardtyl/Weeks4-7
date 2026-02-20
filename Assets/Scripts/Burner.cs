@@ -19,12 +19,13 @@ public class Burner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //calls on burner function
         burners();
     }
 
     public void SpawnBurner()
     {
-        //Keeps the burner prefab from cloning repeatedley 
+        //Keeps the burner prefab from cloning repeatedly 
         Burning = !Burning;
         if( Burning)
         {

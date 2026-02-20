@@ -17,6 +17,7 @@ public class LightOnOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets colour values to go between yellow and black based on slider
         lightColour.x = lightSlider.value;
         lightColour.y = lightSlider.value;
         if(Black == false)
@@ -27,17 +28,13 @@ public class LightOnOff : MonoBehaviour
 
     public void LightOff()
     {
+        //If button pressed turn light off and change colour
         Black = !Black;
         if (Black == true)
         {
             spriteRenderer.color = Color.black;
         }
-        else 
-        { 
-           
-        }
-        //Color.yellow;
-        //Random.ColorHSV(); 
+      
     }
 
 }
