@@ -6,51 +6,54 @@ public class PlateRotate : MonoBehaviour
     public float clockDuration;
     private float timeWaiting;
 
-    public GameObject spawningPrefab;
-
-    public float waitDuration;
-    private float waitProgress = 0f;
+    public Slider rotationSlider;
+    public GameObject food;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //sushiSlider.maxValue = clockDuration;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        // timeWaiting += Time.deltaTime * 1;
-        //sushiSlider.value = timeWaiting;
 
-        //    if (timeWaiting > clockDuration)
-        //    {
-        //        timeWaiting = 0f;
-        //        Debug.Log("Time is up");
+        RotatePlate();;
+        Vector3 rotatePlate = transform.eulerAngles;
+           rotatePlate.y += rotationSpeed * Time.deltaTime;
+        transform.eulerAngles = rotatePlate;
 
-        //        //WHEN TIMER IS UP:
-        //        //EITHER:
-        //        //Turn the warper object off when it is on
-        //        //Turn the warper object on when it is off
-        //        bool shouldTurnOn = !warperObject.activeInHierarchy;
-        //        bool shouldTurnOff = warperObject.activeInHierarchy;
-        //        if (shouldTurnOn == true)
-        //        {
-        //            warperObject.SetActive(true);
-        //        }
 
-        //        if (shouldTurnOff)
-        //        {
-        //            warperObject.SetActive(false);
-        //        }
 
-        //    }
-      
-
-        }
+    }
 
     public void RotatePlate()
     {
+        timeWaiting += Time.deltaTime * 1;
+        rotationSlider.value = timeWaiting;
 
+        if (timeWaiting > clockDuration)
+        {
+            timeWaiting = 0f;
+
+            //WHEN TIMER IS UP:
+            //EITHER:
+            //Turn the warper object off when it is on
+            //Turn the warper object on when it is off
+            bool shouldTurnOn = !food.activeInHierarchy;
+            bool shouldTurnOff = food.activeInHierarchy;
+            if (shouldTurnOn == true)
+            {
+                food.SetActive(true);
+                
+            }
+
+            if (shouldTurnOff)
+            {
+                food.SetActive(false);
+            }
+
+        }
     }
 
     }
