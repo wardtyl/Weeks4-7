@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class LightOnOff : MonoBehaviour
 {
+    bool Black = true;
+
     SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,11 +20,14 @@ public class LightOnOff : MonoBehaviour
 
     public void LightOff()
     {
-        spriteRenderer.color = Color.black;
+        Black = !Black;
+        if (Black == true)
+        {
+            spriteRenderer.color = Color.black;
+
+        }
+        else { spriteRenderer.color = Color.yellow; }
     }
 
-    public void LightOn()
-    {
-        spriteRenderer.color = Color.yellow;
-    }
+
 }

@@ -29,12 +29,7 @@ public class Burner : MonoBehaviour
             Instantiate(burnerPrefab, new Vector3(-2.6f, 1.8f, 0), Quaternion.identity);
         
 
-        
-
             Instantiate(burnerPrefab, new Vector3(-0.3f, 1.8f, 0), Quaternion.identity);
-        
-
-        
          
 
             Instantiate(burnerPrefab, new Vector3(2, 1.8f, 0), Quaternion.identity);
