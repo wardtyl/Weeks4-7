@@ -17,43 +17,43 @@ public class PlateRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        RotatePlate();;
-        Vector3 rotatePlate = transform.eulerAngles;
-           rotatePlate.y += rotationSpeed * Time.deltaTime;
-        transform.eulerAngles = rotatePlate;
-
-
+        //Calls function in update
+        RotatePlate();
 
     }
 
     public void RotatePlate()
     {
-        timeWaiting += Time.deltaTime * 1;
-        rotationSlider.value = timeWaiting;
+        //timeWaiting += Time.deltaTime * 1;
+        //rotationSlider.value = timeWaiting;
 
-        if (timeWaiting > clockDuration)
-        {
-            timeWaiting = 0f;
+        //if (timeWaiting > clockDuration)
+        //{
+        //    timeWaiting = 0f;
 
-            //WHEN TIMER IS UP:
-            //EITHER:
-            //Turn the warper object off when it is on
-            //Turn the warper object on when it is off
-            bool shouldTurnOn = !food.activeInHierarchy;
-            bool shouldTurnOff = food.activeInHierarchy;
-            if (shouldTurnOn == true)
-            {
-                food.SetActive(true);
-                
-            }
+        //    //WHEN TIMER IS UP:
+        //    //EITHER:
+        //    //Turn the warper object off when it is on
+        //    //Turn the warper object on when it is off
+        //    bool TurnOn = !food.activeInHierarchy;
+        //    bool TurnOff = food.activeInHierarchy;
+        //    if (TurnOn == true)
+        //    {
+        //        food.SetActive(true);
 
-            if (shouldTurnOff)
-            {
-                food.SetActive(false);
-            }
+        //    }
 
-        }
+        //    if (TurnOff)
+        //    {
+        //        food.SetActive(false);
+        //    }
+
+        //}
+
+        //Allows for animation of rotation to occur smoothly along y-axis
+        Vector3 rotatePlate = transform.eulerAngles;
+        rotatePlate.y += rotationSpeed * Time.deltaTime;
+        transform.eulerAngles = rotatePlate;
     }
 
     }

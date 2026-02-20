@@ -687,7 +687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   clockDuration: 5
-  waitDuration: 0
   rotationSlider: {fileID: 2087854250}
   food: {fileID: 2113576714}
 --- !u!1 &216561467

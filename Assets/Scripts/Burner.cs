@@ -24,6 +24,7 @@ public class Burner : MonoBehaviour
 
     public void SpawnBurner()
     {
+        //Keeps the burner prefab from cloning repeatedley 
         Burning = !Burning;
         if( Burning)
         {
@@ -33,6 +34,7 @@ public class Burner : MonoBehaviour
     }
     void burners()
     {
+        //spawns the burners at specified locations
         if (Burning == true && burnerActiveOnce == true)
         {
             Vector3 currentMousePosition = Mouse.current.position.ReadValue();
@@ -50,6 +52,7 @@ public class Burner : MonoBehaviour
         }
         if (Burning == false)
         {
+            //destroys the burners upon pressing button a second time
             Destroy(burner); Destroy(burner1); Destroy(burner2);
         }
     }
