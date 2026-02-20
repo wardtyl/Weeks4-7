@@ -47,6 +47,12 @@ public class PlateRotate : MonoBehaviour
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
 
         }
+
+    public void RotatePlate()
+    {
+
+    }
+
     }
 
 
